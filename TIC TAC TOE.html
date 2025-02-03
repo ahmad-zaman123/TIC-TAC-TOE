@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #main{
+
+            height:630px;
+            width: 1345px;
+            /* border: 1px solid black; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        #heading{
+            align-self: center;
+            text-align: center;
+            color: white;
+        }
+
+        .row-box{
+            height: 80px;
+            width: 240px;
+            /* border: 1px solid green; */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .box{
+            height: 80px;
+            width: 80px;
+            border: 1px solid white;
+        }
+
+        #buttons{
+            height: 100px;
+            width: 250px;
+            /* border: 1px solid blue; */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        button{
+            height: 40px ;
+            width: 110px ;
+            /* border: 1px solid brown; */
+        }
+
+        #Block{
+            height:100px ;
+            width: 100px;
+            background-color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="main">
+
+            <div class="row-box">
+
+                <h2 id="heading">TIC TAC TOE</h2>
+
+            </div>
+
+            <div class="row-box">
+
+                <div class="box" id="box1" onclick="turn1()"></div>
+                <div class="box" id="box2" onclick="turn2()"></div>
+                <div class="box" id="box3" onclick="turn3()"></div>
+            </div>
+
+            <div class="row-box">
+
+                <div class="box" id="box4" onclick="turn4()"></div>
+                <div class="box" id="box5" onclick="turn5()"></div>
+                <div class="box" id="box6" onclick="turn6()"></div>
+            </div>
+
+            <div class="row-box">
+
+                <div class="box" id="box7" onclick="turn7()"></div>
+                <div class="box" id="box8" onclick="turn8()"></div>
+                <div class="box" id="box9" onclick="turn9()"></div>
+            </div>
+
+            <div id="buttons">
+
+                <button id="startgame" onclick="start_game()">START GAME</button>
+                <button id="reset" onclick="reset()">RESET</button>
+
+            </div>
+
+    </div>
+
+    <script>
+
+        var count = 0
+
+        function start_game(){
+
+            var head = document.getElementById('heading')
+            head.innerText = 'PLAYER 1'
+        }
+
+     
+        function turn1()
+        {
+            var head = document.getElementById('heading')
+
+            if(head.innerText == 'PLAYER 1')
+            {
+                var circle = document.getElementById('box1')
+                circle.innerHTML = '<h1>O</h1>'
+                circle.style.textAlign = 'center'
+                circle.style.color = 'white'
+
+                head.innerText = 'PLAYER 2'
+            }
+
+            else if(head.innerText == 'PLAYER 2')
+            {
+                var cross = document.getElementById('box1')
+                cross.innerHTML = '<h1>X</h1>'
+                cross.style.textAlign = 'center'
+                cross.style.color = 'white'
+
+                head.innerText = 'PLAYER 1'
+            }
+
+            count++;
+
+            winner();
+
+        }
+
+        function turn2()
+        {
+            var head = document.getElementById('heading')
+
+            if(head.innerText == 'PLAYER 1')
+            {
+                var circle = document.getElementById('box2')
+                circle.innerHTML = '<h1>O</h1>'
+                circle.style.textAlign = 'center'
+                circle.style.color = 'white'
+
+                head.innerText = 'PLAYER 2'
+            }
+
+            else if(head.innerText == 'PLAYER 2')
+            {
+                var cross = document.getElementById('box2')
+                cross.innerHTML = '<h1>X</h1>'
+                cross.style.textAlign = 'center'
+                cross.style.color = 'white'
+
+                head.innerText = 'PLAYER 1'
+            }
+            count++;
+            winner();
+
+        }
+
+        function turn3()
+        {
+            var head = document.getElementById('heading')
+
+            if(head.innerText == 'PLAYER 1')
+            {
+                var circle = document.getElementById('box3')
+                circle.innerHTML = '<h1>O</h1>'
+                circle.style.textAlign = 'center'
+                circle.style.color = 'white'
+
+                head.innerText = 'PLAYER 2'
+            }
+
+            else if(head.innerText == 'PLAYER 2')
+            {
+                var cross = document.getElementById('box3')
+                cross.innerHTML = '<h1>X</h1>'
+                cross.style.textAlign = 'center'
+                cross.style.color = 'white'
+
+                head.innerText = 'PLAYER 1'
+            }
+            count++;
+            winner();
+            
+        }
+
+        function turn4()
+        {
+            var head = document.getElementById('heading')
+
+            if(head.innerText == 'PLAYER 1')
+            {
+                var circle = document.getElementById('box4')
+                circle.innerHTML = '<h1>O</h1>'
+                circle.style.textAlign = 'center'
+                circle.style.color = 'white'
+
+                head.innerText = 'PLAYER 2'
+            }
+
+            else if(head.innerText == 'PLAYER 2')
+            {
+                var cross = document.getElementById('box4')
+                cross.innerHTML = '<h1>X</h1>'
+                cross.style.textAlign = 'center'
+                cross.style.color = 'white'
+
+                head.innerText = 'PLAYER 1'
+            }
+            count++;
+            winner();
+
+        }
+
+        function turn5()
+        {
+            var head = document.getElementById('heading')
+
+            if(head.innerText == 'PLAYER 1')
+            {
+                var circle = document.getElementById('box5')
+                circle.innerHTML = '<h1>O</h1>'
+                circle.style.textAlign = 'center'
+                circle.style.color = 'white'
+
+                head.innerText = 'PLAYER 2'
+            }
+
+            else if(head.innerText == 'PLAYER 2')
+            {
+                var cross = document.getElementById('box5')
+                cross.innerHTML = '<h1>X</h1>'
+                cross.style.textAlign = 'center'
+                cross.style.color = 'white'
+
+                head.innerText = 'PLAYER 1'
+            }
+            count++;
+            winner();
+
+        }
+
+        function turn6()
+        {
+            var head = document.getElementById('heading')
+
+            if(head.innerText == 'PLAYER 1')
+            {
+                var circle = document.getElementById('box6')
+                circle.innerHTML = '<h1>O</h1>'
+                circle.style.textAlign = 'center'
+                circle.style.color = 'white'
+
+                head.innerText = 'PLAYER 2'
+            }
+
+            else if(head.innerText == 'PLAYER 2')
+            {
+                var cross = document.getElementById('box6')
+                cross.innerHTML = '<h1>X</h1>'
+                cross.style.textAlign = 'center'
+                cross.style.color = 'white'
+
+                head.innerText = 'PLAYER 1'
+            }
+            count++;
+            winner();
+ 
+        }
+
+        function turn7()
+        {
+            var head = document.getElementById('heading')
+
+            if(head.innerText == 'PLAYER 1')
+            {
+                var circle = document.getElementById('box7')
+                circle.innerHTML = '<h1>O</h1>'
+                circle.style.textAlign = 'center'
+                circle.style.color = 'white'
+
+                head.innerText = 'PLAYER 2'
+            }
+
+            else if(head.innerText == 'PLAYER 2')
+            {
+                var cross = document.getElementById('box7')
+                cross.innerHTML = '<h1>X</h1>'
+                cross.style.textAlign = 'center'
+                cross.style.color = 'white'
+
+                head.innerText = 'PLAYER 1'
+            }
+            count++;
+            winner();
+        
+        }
+
+        function turn8()
+        {
+            var head = document.getElementById('heading')
+
+            if(head.innerText == 'PLAYER 1')
+            {
+                var circle = document.getElementById('box8')
+                circle.innerHTML = '<h1>O</h1>'
+                circle.style.textAlign = 'center'
+                circle.style.color = 'white'
+
+                head.innerText = 'PLAYER 2'
+            }
+
+            else if(head.innerText == 'PLAYER 2')
+            {
+                var cross = document.getElementById('box8')
+                cross.innerHTML = '<h1>X</h1>'
+                cross.style.textAlign = 'center'
+                cross.style.color = 'white'
+
+                head.innerText = 'PLAYER 1'
+            }
+            count++;
+            winner();
+ 
+        }
+
+        function turn9()
+        {
+            var head = document.getElementById('heading')
+
+            if(head.innerText == 'PLAYER 1')
+            {
+                var circle = document.getElementById('box9')
+                circle.innerHTML = '<h1>O</h1>'
+                circle.style.textAlign = 'center'
+                circle.style.color = 'white'
+
+                head.innerText = 'PLAYER 2'
+            }
+
+            else if(head.innerText == 'PLAYER 2')
+            {
+                var cross = document.getElementById('box9')
+                cross.innerHTML = '<h1>X</h1>'
+                cross.style.textAlign = 'center'
+                cross.style.color = 'white'
+
+                head.innerText = 'PLAYER 1'
+            }
+            count++;
+            winner();
+        
+        }
+
+        function winner()
+        {
+            var head = document.getElementById('heading')
+
+            if(verify()==true)
+            {
+                head.innerText = 'PLAYER 1 WINS!'
+            }
+            else if (verify()==false)
+            {
+                head.innerText = 'PLAYER 2 WINS!'
+            }
+            else if(count==9 && verify()!=true && verify()!=false)
+            {
+                head.innerText = 'DRAW!'
+            }
+        }
+
+        function verify()
+        {
+            var head = document.getElementById('heading')
+
+            var box1 = document.getElementById('box1')
+            var box2 = document.getElementById('box2')
+            var box3 = document.getElementById('box3')
+            var box4 = document.getElementById('box4')
+            var box5 = document.getElementById('box5')
+            var box6 = document.getElementById('box6')
+            var box7 = document.getElementById('box7')
+            var box8 = document.getElementById('box8')
+            var box9 = document.getElementById('box9')
+
+            if(box1.innerText == 'O' && box2.innerText == 'O' && box3.innerText == 'O')
+            {
+                box1.style.backgroundColor = 'red'
+                box2.style.backgroundColor = 'red'
+                box3.style.backgroundColor = 'red'
+                return true
+            }
+            else if (box1.innerText == 'X' && box2.innerText == 'X' && box3.innerText == 'X')
+            {
+                box1.style.backgroundColor = 'red'
+                box2.style.backgroundColor = 'red'
+                box3.style.backgroundColor = 'red'
+                return false
+            }
+            else if (box1.innerText == 'O' && box5.innerText == 'O' && box9.innerText == 'O')
+            {
+                box1.style.backgroundColor = 'red'
+                box5.style.backgroundColor = 'red'
+                box9.style.backgroundColor = 'red'
+                return true
+            }
+            else if (box1.innerText == 'X' && box5.innerText == 'X' && box9.innerText == 'X')
+            {
+                box1.style.backgroundColor = 'red'
+                box5.style.backgroundColor = 'red'
+                box9.style.backgroundColor = 'red'
+                return false
+            }
+            else if (box1.innerText == 'O' && box4.innerText == 'O' && box7.innerText == 'O')
+            {
+                box1.style.backgroundColor = 'red'
+                box4.style.backgroundColor = 'red'
+                box7.style.backgroundColor = 'red'
+                return true
+            }
+            else if (box1.innerText == 'X' && box4.innerText == 'X' && box7.innerText == 'X')
+            {
+                box1.style.backgroundColor = 'red'
+                box4.style.backgroundColor = 'red'
+                box7.style.backgroundColor = 'red'
+                return false
+            }
+            else if (box2.innerText == 'O' && box5.innerText == 'O' && box8.innerText == 'O')
+            {
+                box2.style.backgroundColor = 'red'
+                box5.style.backgroundColor = 'red'
+                box8.style.backgroundColor = 'red'
+                return true
+            }
+            else if (box2.innerText == 'X' && box5.innerText == 'X' && box8.innerText == 'X')
+            {
+                box8.style.backgroundColor = 'red'
+                box5.style.backgroundColor = 'red'
+                box2.style.backgroundColor = 'red'
+                return false
+            }
+            else if (box3.innerText == 'O' && box5.innerText == 'O' && box7.innerText == 'O')
+            {
+                box7.style.backgroundColor = 'red'
+                box5.style.backgroundColor = 'red'
+                box3.style.backgroundColor = 'red'
+                return true
+            }
+            else if (box3.innerText == 'X' && box5.innerText == 'X' && box7.innerText == 'X')
+            {
+                box7.style.backgroundColor = 'red'
+                box5.style.backgroundColor = 'red'
+                box3.style.backgroundColor = 'red'
+                return false
+            }
+            else if (box3.innerText == 'O' && box6.innerText == 'O' && box9.innerText == 'O')
+            {
+                box9.style.backgroundColor = 'red'
+                box6.style.backgroundColor = 'red'
+                box3.style.backgroundColor = 'red'
+                return true
+            }
+            else if (box3.innerText == 'X' && box6.innerText == 'X' && box9.innerText == 'X')
+            {
+                box9.style.backgroundColor = 'red'
+                box6.style.backgroundColor = 'red'
+                box3.style.backgroundColor = 'red'
+                return false
+            }
+            else if (box4.innerText == 'O' && box5.innerText == 'O' && box6.innerText == 'O')
+            {
+                box4.style.backgroundColor = 'red'
+                box5.style.backgroundColor = 'red'
+                box6.style.backgroundColor = 'red'
+                return true
+            }
+            else if (box4.innerText == 'X' && box5.innerText == 'X' && box6.innerText == 'X')
+            {
+                box4.style.backgroundColor = 'red'
+                box5.style.backgroundColor = 'red'
+                box6.style.backgroundColor = 'red'
+                return false
+            }
+            else if (box7.innerText == 'O' && box8.innerText == 'O' && box9.innerText == 'O')
+            {
+                box7.style.backgroundColor = 'red'
+                box8.style.backgroundColor = 'red'
+                box9.style.backgroundColor = 'red'
+                return true
+            }
+            else if (box7.innerText == 'X' && box8.innerText == 'X' && box9.innerText == 'X')
+            {
+                box7.style.backgroundColor = 'red'
+                box8.style.backgroundColor = 'red'
+                box9.style.backgroundColor = 'red'
+                return false
+            }
+
+        }
+
+        function reset()
+        {
+            var head = document.getElementById('heading')
+
+            var box1 = document.getElementById('box1')
+            var box2 = document.getElementById('box2')
+            var box3 = document.getElementById('box3')
+            var box4 = document.getElementById('box4')
+            var box5 = document.getElementById('box5')
+            var box6 = document.getElementById('box6')
+            var box7 = document.getElementById('box7')
+            var box8 = document.getElementById('box8')
+            var box9 = document.getElementById('box9')
+
+            head.innerHTML = '<h4>TIC TAC TOE</h4>'
+            box1.innerHTML = ''
+            box2.innerHTML = ''
+            box3.innerHTML = ''
+            box4.innerHTML = ''
+            box5.innerHTML = ''
+            box6.innerHTML = ''
+            box7.innerHTML = ''
+            box8.innerHTML = ''
+            box9.innerHTML = ''
+
+            box1.style = ''
+            box2.style = ''
+            box3.style = ''
+            box4.style = ''
+            box5.style = ''
+            box6.style = ''
+            box7.style = ''
+            box8.style = ''
+            box9.style = ''
+
+            count = 0;
+
+        }
+
+       
+
+    </script>
+    
+</body>
+</html>
